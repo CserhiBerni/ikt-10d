@@ -1,4 +1,4 @@
-import "./App.css";
+import "./Main.css";
 import { useState } from "react";
 import { BsCashCoin, BsGlobe2 } from "react-icons/bs";
 import { GoRocket } from "react-icons/go";
@@ -6,7 +6,7 @@ import axios from 'axios';
 
 const apiAddress = "http://localhost:5000/api";
 
-function App() {
+function Main() {
   const [isLoading, setLoad] = useState("false");
   const [currency, setCurrency] = useState({ name: "USD", multiplier: 1 });
   const [keyshop, keyshopStatus] = useState(true);
@@ -208,4 +208,4 @@ function App() {
   );
 }
 
-export default App;
+export default Main;
