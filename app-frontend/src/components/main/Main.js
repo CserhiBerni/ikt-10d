@@ -6,6 +6,10 @@ import axios from 'axios';
 
 const apiAddress = "http://localhost:5000/api";
 
+const currencyCache = {
+  'USD_USD': { name: "USD", multiplier: 1 },
+};
+
 function Main() {
   const [isLoading, setLoad] = useState("false");
   const [currency, setCurrency] = useState({ name: "USD", multiplier: 1 });
@@ -25,11 +29,17 @@ function Main() {
   }
 
   async function changeCurrency(curr) {
+    const pair = `USD_${curr}`;
+    if (currencyCache[pair] != null) {
+      setCurrency(currencyCache[pair]);
+      return;
+    }
+
     try {
       const response = await axios.get(
-        `https://free.currconv.com/api/v7/convert?q=USD_${curr}&compact=ultra&apiKey=ab0ba6e042abcccc63e7`);
-      console.log(response.data);
-      setCurrency({ name: curr, multiplier: response.data[`USD_${curr}`] });
+        `https://free.currconv.com/api/v7/convert?q=${pair}&compact=ultra&apiKey=ab0ba6e042abcccc63e7`);
+      setCurrency({ name: curr, multiplier: response.data[pair] });
+      currencyCache[pair] = { name: curr, multiplier: response.data[pair] };
     } catch (error) {
       console.error(error);
     }
@@ -185,7 +195,7 @@ function Main() {
                 <a className="success-btn" href={apiData.storeUrlData} target="_blank" rel="noreferrer">
                   Vásárolj most</a>
               </div>
-              <div className="keyshop" style={{display: keyshop ? '' : 'none'}}>
+              <div className="keyshop" style={{ display: keyshop ? '' : 'none' }}>
                 <p id="keyshop">Keyshopos ár: {(apiData.keyshopData * currency.multiplier).toFixed(2)}{currency.name}</p>
                 <a className="success-btn" href={apiData.keyshopUrlData} target="_blank" rel="noreferrer">
                   Vásárolj most</a>
