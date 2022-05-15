@@ -1,0 +1,13 @@
+version: '3'
+services:
+  vekni-frontend:
+    image: vekni-iktfront-arm
+    ports:
+      - "84:80"
+    restart: always
+
+  vekni-backend:
+    image: vekni-iktback-arm
+    ports:
+      - "83:5000"
+    restart: always

@@ -1,0 +1,8 @@
+{
+    "scripts": {
+        "prebuild": "cd ../app-frontend && npm install && cd ../app-backend && npm install",
+        "build": "yarn build:front && yarn build:back",
+        "build:front": "npm --prefix ../app-frontend run build && docker buildx build --platform linux/arm/v7 -f ../app-frontend/dockerfile -t vekni-iktfront-arm ../app-frontend && docker save -o ./vekni-iktfront.arm.tar vekni-iktfront-arm",
+        "build:back": "docker buildx build --platform linux/arm/v7 -f ../app-backend/dockerfile -t vekni-iktback-arm ../app-backend && docker save -o ./vekni-iktback.arm.tar vekni-iktback-arm"
+    }
+}
