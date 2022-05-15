@@ -9,10 +9,20 @@ const apiAddress = "http://localhost:5000/api";
 function App() {
   const [isLoading, setLoad] = useState("false");
   const [currency, setCurrency] = useState({ name: "USD", multiplier: 1 });
-  
+  const [keyshop, keyshopStatus] = useState(true);
   const [apiData, setApiData] = useState(
     { offstrData: "0", keyshopData: "0", storeUrlData: "0", keyshopUrlData: "0", bgImageData: "0" }
   );
+
+  function keyshopValue() {
+    let keyshopValue = document.getElementById('keyshop');
+    if (keyshopValue === keyshop) {
+      return;
+    }
+    else {
+      keyshopStatus(!keyshop);
+    }
+  }
 
   async function changeCurrency(curr) {
     try {
@@ -71,7 +81,9 @@ function App() {
             <li className="setting">
               Keyshopok:
               <b>
-                <select id="keyshop md-col-2">
+                <select id="keyshop" onChange={() => {
+                  keyshopValue();
+                }}>
                   <option value="enable">Engedélyez</option>
                   <option value="disable">Nem engedélyez</option>
                 </select>
@@ -93,8 +105,8 @@ function App() {
         </div>
         <div className="title-line md-col-2">
           <div className="text-wrapper">
-            <h1 className="first-header">Title</h1>
-            <h1 className="second-header">dinamikus droid duo</h1>
+            <h1 className="first-header">Janó Manó</h1>
+            <h1 className="second-header">minden vágyad teljesül</h1>
           </div>
         </div>
         <div className="slider-container">
@@ -173,7 +185,7 @@ function App() {
                 <a className="success-btn" href={apiData.storeUrlData} target="_blank" rel="noreferrer">
                   Vásárolj most</a>
               </div>
-              <div className="keyshop">
+              <div className="keyshop" style={{display: keyshop ? '' : 'none'}}>
                 <p id="keyshop">Keyshopos ár: {(apiData.keyshopData * currency.multiplier).toFixed(2)}{currency.name}</p>
                 <a className="success-btn" href={apiData.keyshopUrlData} target="_blank" rel="noreferrer">
                   Vásárolj most</a>
