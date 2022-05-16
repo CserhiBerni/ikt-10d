@@ -83,7 +83,7 @@ function Main() {
   return (
     <div className="App">
       <div className="App-wrapper">
-        <div className="top-setting md-col-2">
+        <div className="top-setting">
           <ul className="settings-list">
             <li className="setting">
               Régió: <b>Hamarosan</b>
@@ -99,7 +99,7 @@ function Main() {
                 </select>
               </b>
             </li>
-            <li className="setting md-col-2">
+            <li className="setting">
               Valuta:
               <select id="currency" onChange={() => {
                 getCurrency();
@@ -113,10 +113,10 @@ function Main() {
             </li>
           </ul>
         </div>
-        <div className="title-line md-col-2">
+        <div className="title-line">
           <div className="text-wrapper">
-            <h1 className="first-header">Janó Manó</h1>
-            <h1 className="second-header">minden vágyad teljesül</h1>
+            <h1 className="first-header">cirmi fasz</h1>
+            <h1 className="second-header">minden játék olcsón</h1>
           </div>
         </div>
         <div className="slider-container">

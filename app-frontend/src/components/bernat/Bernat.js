@@ -1,7 +1,14 @@
 import React from "react";
+import './portfolio.css';
 
 function Bernat() {
-    return (<h1 style={{color: 'white'}}>Bernát</h1>);
+    return (
+        <div className="main">
+            <div className="header">
+                <img src="" alt="" className="pfp" />
+            </div>
+        </div>
+    );
 }
 
 export default Bernat;
