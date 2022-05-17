@@ -17,6 +17,9 @@ function Navbar() {
                         <li className="nav-item">
                             <NavLink className="nav-link" activeClassName="active" to="/krisztian">Krisztián</NavLink>
                         </li>
+                        <div className="nav-item">
+{/*                             <NavLink className="nav-link" activeClassName="active" to="/tictactoe">TicTacToe</NavLink>
+ */}                        </div>
                     </ul>
                 </div>
             </div>

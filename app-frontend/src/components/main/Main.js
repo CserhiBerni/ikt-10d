@@ -10,6 +10,8 @@ const currencyCache = {
   'USD_USD': { name: "USD", multiplier: 1 },
 };
 
+document.title = "Gazdag Majmok";
+
 function Main() {
   const [isLoading, setLoad] = useState("false");
   const [currency, setCurrency] = useState({ name: "USD", multiplier: 1 });
@@ -115,7 +117,7 @@ function Main() {
         </div>
         <div className="title-line">
           <div className="text-wrapper">
-            <h1 className="first-header">cirmi fasz</h1>
+            <h1 className="first-header">Gazdag Majmok</h1>
             <h1 className="second-header">minden játék olcsón</h1>
           </div>
         </div>

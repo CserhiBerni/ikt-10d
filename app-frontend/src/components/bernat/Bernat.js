@@ -1,12 +1,10 @@
 import React from "react";
-import './portfolio.css';
+import './Bernat.css';
 
 function Bernat() {
     return (
         <div className="main">
-            <div className="header">
-                <img src="" alt="" className="pfp" />
-            </div>
+            
         </div>
     );
 }

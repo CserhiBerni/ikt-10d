@@ -1,7 +1,13 @@
 import React from "react";
+import './Krisztian.css';
+import logo from '../img/krisz.png';
 
 function Krisztian() {
-    return (<h1 style={{color: 'white'}}>Krisztián</h1>);
+    return (
+        <div className="main">
+            <img src={logo} alt="krisz" />
+        </div>
+    );
 }
 
 export default Krisztian;
