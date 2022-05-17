@@ -3,7 +3,7 @@ import './Bernat.css';
 
 function Bernat() {
     return (
-        <div className="main">
+        <div className="main bernat">
             <div className="list-item">
                 <div className="item-title">
                     <h1>Magamról</h1>
