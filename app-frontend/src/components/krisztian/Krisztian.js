@@ -6,7 +6,7 @@ function Krisztian() {
     return (
         <div className="main krisztian">
             <img src={logo} alt="krisz" />
-            <div class="pb-3"></div>
+            <div className="pb-3"></div>
         </div>
     );
 }
