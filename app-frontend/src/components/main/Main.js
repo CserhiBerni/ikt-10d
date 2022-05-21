@@ -68,7 +68,8 @@ function Main() {
       document.querySelector(".search-bar").value = "";
       const queryUrl = `${apiAddress}?game=${input
         .toLowerCase()
-        .replaceAll(" ", "-")}`;
+        .replaceAll(" ", "-")
+        .replaceAll("'", "-")}`;
       try {
         const res = await fetch(queryUrl).then((response) => response.json());
         res.offstrData = parseFloat(res.offstrData.toString().replace('$', ''));
