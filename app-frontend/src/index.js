@@ -6,6 +6,8 @@ import MainRouter from './Router';
 import reportWebVitals from './reportWebVitals';
 import Navbar from "./components/navbar/Navbar";
 
+console.log('%cCopyright %cBernát %cés %cKrisztián', 'color: red', 'color: lightgreen; font-weight: bold', 'color: red', 'color: cyan; font-weight: bold',)
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
