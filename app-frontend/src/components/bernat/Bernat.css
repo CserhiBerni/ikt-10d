@@ -35,3 +35,43 @@
 .item-content {
     padding: 0 3rem;
 }
+
+.img-div {
+    text-align: center;
+}
+
+.img-div img {
+    height: 500px;
+    outline: 4px dashed #6089fb;
+}
+
+.social-media {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.social {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.social p {
+    margin: 0 1rem;
+}
+
+
+.social:nth-child(1) {
+    color: #FF6BFF;
+}
+
+.social:nth-child(2) {
+    color: #6089fb;
+}
+
+.social:nth-child(3) {
+    color: #FFB52B;
+}

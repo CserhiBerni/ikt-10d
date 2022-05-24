@@ -1,5 +1,8 @@
 import React from "react";
 import './Bernat.css';
+import bernat from '../img/bernat.jpg';
+import { BsInstagram, BsFacebook } from 'react-icons/bs';
+import { AiFillMail } from 'react-icons/ai';
 
 function Bernat() {
     return (
@@ -10,8 +13,8 @@ function Bernat() {
                 </div>
                 <div className="item-content">
                     <p>Gáspár Bernát vagyok, 16 éves tanuló. Jelenleg a Petrik Lajos technikumba járok be minden nap,
-                        általánosba a zuglói Herman Ottó Általánosba jártam. Nem a kedvenc eltöltésem iskolába
-                        járni, viszont informatikát tanulok és igyekszem <br />a maximumot kihozni belőle.
+                        általánosba a zuglói Herman Ottó Általánosba jártam. Nem feltétlen a kedvenc dolgom
+                        iskolába járni, viszont informatikát tanulok és igyekszem <br />a maximumot kihozni belőle.
                     </p>
                 </div>
             </div>
@@ -27,12 +30,16 @@ function Bernat() {
                     </p>
                 </div>
             </div>
+            <div className="img-div">
+                <img src={bernat} alt="bernat" />
+            </div>
             <div className="list-item">
                 <div className="item-title">
                     <h1>Kedvenc tantárgyak</h1>
                 </div>
                 <div className="item-content">
-                    <p>Legfőképpen azt szeretem, amikor nincsnek órák és tanulhatok magamtól, viszont ha mondanom kéne párat,
+                    <p>Nagyon nem tudnék kiemelni egy tantárgyat, inkább az adott
+                        tantárgyon belül a témától függ a preferenciám, viszont ha mondanom kéne párat,
                         akkor igazából minden reál tantárgyat mondanék. Ezekben van nagyobb ismeretem, részben
                         ezért is szeretem ezeket jobban.
                     </p>
@@ -43,10 +50,24 @@ function Bernat() {
                     <h1>Jövőkép</h1>
                 </div>
                 <div className="item-content">
-                    <p>Ha kijártam végre valahára az iskolát utána már rendeltetés szerűen programozó szeretnék
+                    <p>Ha kijártam az iskolát utána már rendeltetés szerűen programozó szeretnék
                         lenni, saját vállalkozásokba kezdeni, megismerni az üzletet. Azt, hogy később még
-                        hol akarok tanulni, arról fogalmam sincs egyenlőre.
+                        hol akarok tanulni, ahhoz több előkészület és utána nézés szükséges.
                     </p>
+                </div>
+            </div>
+            <div className="social-media">
+                <div className="social">
+                    <BsInstagram size={30} />
+                    <p>gaspar.bernat</p>
+                </div>
+                <div className="social">
+                    <BsFacebook size={30} />
+                    <p>Gáspár Bernát</p>
+                </div>
+                <div className="social">
+                    <AiFillMail size={30} />
+                    <p>gaspar.bernat2005@gmail.com</p>
                 </div>
             </div>
         </div>
