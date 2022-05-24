@@ -76,8 +76,8 @@ function Main() {
         res.keyshopData = parseFloat(res.keyshopData.toString().replace('~', '').replace('$', ''));
         setApiData(res);
         setLoad("false");
-      } catch (e) {
-        console.error(e);
+      } catch (err) {
+        console.error(err);
         setLoad("error");
       }
     }
@@ -211,11 +211,6 @@ function Main() {
           )}
         </div>
         <div className="filler"></div>
-      </div>
-      <div className="mobile-view">
-        <div className="mw-wrapper">
-          <h1>Rossz a telefonod :(</h1>
-        </div>
       </div>
     </div>
   );

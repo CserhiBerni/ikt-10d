@@ -261,27 +261,9 @@ body::-webkit-scrollbar-thumb {
   100% { transform: rotate(360deg); }
 }
 
-.mobile-view {
-  display: none;
-  background-color: #ff4e4e;
-  color: white;
-  text-align: center;
-  width: 100%;
-  height: 100vh;
-}
-
 .mw-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
-}
-
-@media screen and (max-width: 880px) {
-  .App-wrapper {
-    display: none;
-  }
-  .mobile-view {
-    display: block;
-  }
 }
