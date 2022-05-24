@@ -40,8 +40,9 @@
     text-align: center;
 }
 
-.img-div img {
+.bernat > .img-div img {
     height: 500px;
+    width: auto;
     outline: 4px dashed #6089fb;
 }
 
