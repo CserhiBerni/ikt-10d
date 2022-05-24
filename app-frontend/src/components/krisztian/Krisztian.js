@@ -4,8 +4,9 @@ import logo from '../img/krisz.png';
 
 function Krisztian() {
     return (
-        <div className="main">
+        <div className="main krisztian">
             <img src={logo} alt="krisz" />
+            <div className="pb-3"></div>
         </div>
     );
 }
