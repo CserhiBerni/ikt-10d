@@ -6,14 +6,21 @@ import MainRouter from './Router';
 import reportWebVitals from './reportWebVitals';
 import Navbar from "./components/navbar/Navbar";
 
+console.log('%cCopyright %cBernát %cés %cKrisztián', 'color: red', 'color: lightgreen; font-weight: bold', 'color: red', 'color: cyan; font-weight: bold',)
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <BrowserRouter>
-      <div className="link-container">
-        <Navbar />
+  <BrowserRouter>
+    <div className="link-container">
+      <Navbar />
+    </div>
+    <div className="mobile-view">
+      <div className="mw-wrapper">
+        <h1>Rossz a telefonod :(</h1>
       </div>
-      <MainRouter />
-    </BrowserRouter>
+    </div>
+    <MainRouter />
+  </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function

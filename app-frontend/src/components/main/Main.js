@@ -10,6 +10,8 @@ const currencyCache = {
   'USD_USD': { name: "USD", multiplier: 1 },
 };
 
+const gameCache = {};
+
 document.title = "Gazdag Majmok";
 
 function Main() {
@@ -33,6 +35,7 @@ function Main() {
   async function changeCurrency(curr) {
     const pair = `USD_${curr}`;
     if (currencyCache[pair] != null) {
+      console.log('Using cache', currencyCache[pair]);
       setCurrency(currencyCache[pair]);
       return;
     }
@@ -70,14 +73,23 @@ function Main() {
         .toLowerCase()
         .replaceAll(" ", "-")
         .replaceAll("'", "-")}`;
+      if (gameCache[input] != null) {
+        console.log('Using cache', gameCache[input]);
+        setTimeout(() => {
+          setApiData(gameCache[input]);
+          setLoad("false");
+        }, 1000);
+        return;
+      }
       try {
         const res = await fetch(queryUrl).then((response) => response.json());
         res.offstrData = parseFloat(res.offstrData.toString().replace('$', ''));
         res.keyshopData = parseFloat(res.keyshopData.toString().replace('~', '').replace('$', ''));
+        gameCache[input] = res;
         setApiData(res);
         setLoad("false");
-      } catch (e) {
-        console.error(e);
+      } catch (err) {
+        console.error(err);
         setLoad("error");
       }
     }
@@ -211,11 +223,6 @@ function Main() {
           )}
         </div>
         <div className="filler"></div>
-      </div>
-      <div className="mobile-view">
-        <div className="mw-wrapper">
-          <h1>Rossz a telefonod :(</h1>
-        </div>
       </div>
     </div>
   );
